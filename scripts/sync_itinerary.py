@@ -17,8 +17,19 @@ with urlopen(request, timeout=35) as response:
     body = response.read(5_000_000).decode('utf-8-sig').strip()
 
 prefix = CALLBACK + '('
+
 if not (body.startswith(prefix) and body.endswith(');')):
-    raise SystemExit('Unexpected API response; not JSONP. Refusing to overwrite itinerary.json')
+    print("=== API DIAGNOSTICS ===")
+    print("Response length:", len(body))
+    print("Response preview:", repr(body[:300]))
+    print("Starts with expected callback:", body.startswith(prefix))
+    print("Ends with expected characters:", body.endswith(');'))
+    print("=======================")
+
+    raise SystemExit(
+        'Unexpected API response; not JSONP. '
+        'Refusing to overwrite itinerary.json'
+    )
 
 payload = json.loads(body[len(prefix):-2])
 if payload.get('error') or not isinstance(payload.get('sheets'), dict):
