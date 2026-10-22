@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-22T06:45:27.672Z",
+  "updatedAt": "2026-10-22T06:48:15.170Z",
   "sheets": {
     "Itinerary": [
       {
@@ -765,11 +765,6 @@
       {
         "Category": "Other",
         "Estimated ($)": "",
-        "Notes": ""
-      },
-      {
-        "Category": "TOTAL",
-        "Estimated ($)": "985",
         "Notes": ""
       }
     ],
