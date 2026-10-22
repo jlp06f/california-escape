@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-22T01:52:14.533Z",
+  "updatedAt": "2026-10-22T06:45:27.672Z",
   "sheets": {
     "Itinerary": [
       {
@@ -339,6 +339,22 @@
         "Notes": "See Ideas page for option to fill the day"
       },
       {
+        "ID": "SFO-03",
+        "Date": "Fri, Nov 6, 2026",
+        "Destination": "San Francisco",
+        "Time": "4:00 PM",
+        "Category": "Dining",
+        "Activity": "Altamirano Restaurant & Bar (Happy Hour)",
+        "Address": "1775 Fulton St, San Francisco, CA 94117",
+        "Map URL": "https://maps.app.goo.gl/VirBrAU92N7EGBd17",
+        "Website URL": "https://altamiranosf.com/menus",
+        "Estimated Cost ($)": "$200.00",
+        "Status": "Idea",
+        "Photo URL": "",
+        "Reservation Link": "",
+        "Notes": "I know Priscilla wants Peruvian!"
+      },
+      {
         "ID": "SFO-04",
         "Date": "Sat, Nov 7, 2026",
         "Destination": "San Francisco",
@@ -448,7 +464,7 @@
         "Destination": "SFO",
         "Type": "Dining",
         "Name": "Arsicault Bakery",
-        "Why Visit": "",
+        "Why Visit": "Bakery",
         "Website": "https://arsicault-bakery.com/",
         "Map URL": "",
         "Estimated Cost ($)": "",
@@ -462,8 +478,8 @@
         "Type": "Dining",
         "Name": "Altamirano Restaurant & Bar",
         "Why Visit": "Peruvian",
-        "Website": "",
-        "Map URL": "",
+        "Website": "https://altamiranosf.com/menus",
+        "Map URL": "https://maps.app.goo.gl/VirBrAU92N7EGBd17",
         "Estimated Cost ($)": "",
         "Priority": "",
         "Status": "",
@@ -471,12 +487,12 @@
       },
       {
         "Idea ID": "IDEA-04",
-        "Destination": "",
-        "Type": "",
-        "Name": "",
-        "Why Visit": "",
-        "Website": "",
-        "Map URL": "",
+        "Destination": "SFO",
+        "Type": "Dining",
+        "Name": "Butter & Crumble",
+        "Why Visit": "Bakery",
+        "Website": "https://www.butterandcrumble.com/",
+        "Map URL": "https://maps.app.goo.gl/j3eShLn4AmtHkspZ6",
         "Estimated Cost ($)": "",
         "Priority": "",
         "Status": "",
@@ -738,7 +754,7 @@
       },
       {
         "Category": "Dining",
-        "Estimated ($)": "300",
+        "Estimated ($)": "500",
         "Notes": ""
       },
       {
@@ -753,7 +769,7 @@
       },
       {
         "Category": "TOTAL",
-        "Estimated ($)": "785",
+        "Estimated ($)": "985",
         "Notes": ""
       }
     ],
