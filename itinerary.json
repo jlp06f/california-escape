@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-22T06:48:15.170Z",
+  "updatedAt": "2026-10-22T06:53:09.403Z",
   "sheets": {
     "Itinerary": [
       {
@@ -172,7 +172,7 @@
         "Address": "933 Main St #29, St Helena, CA 94574",
         "Map URL": "https://maps.app.goo.gl/X2YLP1LL9Dd3S8Uk9",
         "Website URL": "https://www.gotts.com/location/city-of-st-helena/",
-        "Estimated Cost ($)": "",
+        "Estimated Cost ($)": "$150.00",
         "Status": "",
         "Photo URL": "",
         "Reservation Link": "",
@@ -300,7 +300,7 @@
         "Address": "Conzelman Rd, Sausalito, CA 94965",
         "Map URL": "https://maps.app.goo.gl/Tz3JRKsV5u2SsZVF9",
         "Website URL": "",
-        "Estimated Cost ($)": "$0.00",
+        "Estimated Cost ($)": "",
         "Status": "Idea",
         "Photo URL": "",
         "Reservation Link": "",
@@ -326,7 +326,7 @@
         "ID": "SFO-03",
         "Date": "Fri, Nov 6, 2026",
         "Destination": "San Francisco",
-        "Time": "Flexible",
+        "Time": "Morning",
         "Category": "Activity",
         "Activity": "SFO Free Day",
         "Address": "",
@@ -749,12 +749,12 @@
     "Budget": [
       {
         "Category": "Parking",
-        "Estimated ($)": "",
+        "Estimated ($)": "235",
         "Notes": ""
       },
       {
         "Category": "Dining",
-        "Estimated ($)": "500",
+        "Estimated ($)": "650",
         "Notes": ""
       },
       {
