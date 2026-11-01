@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T04:00:43.989Z",
+  "updatedAt": "2026-11-01T10:46:21.082Z",
   "sheets": {
     "Itinerary": [
       {
@@ -53,18 +53,18 @@
       {
         "ID": "NAPA-04",
         "Date": "Mon, Nov 2, 2026",
-        "Destination": "Sanoma",
+        "Destination": "Napa",
         "Time": "2:30 PM",
-        "Category": "Activity",
-        "Activity": "Train Town",
+        "Category": "Dining",
+        "Activity": "Oxbow Market",
         "Address": "20264 Broadway, Sonoma, CA 95476",
-        "Map URL": "https://maps.app.goo.gl/NqvvXLuuBkAYtZz86",
-        "Website URL": "https://www.traintown.com/",
-        "Estimated Cost ($)": "$100.00",
+        "Map URL": "https://maps.app.goo.gl/zJVM9ndun9Acr6ut7",
+        "Website URL": "https://oxbowpublicmarket.com/",
+        "Estimated Cost ($)": "",
         "Status": "Idea",
         "Photo URL": "",
         "Reservation Link": "",
-        "Notes": "entry free, only pay for attactions"
+        "Notes": "Meet here for lunch with Peter"
       },
       {
         "ID": "NAPA-05",
@@ -759,7 +759,7 @@
       },
       {
         "Category": "Activities",
-        "Estimated ($)": "485",
+        "Estimated ($)": "385",
         "Notes": ""
       },
       {
