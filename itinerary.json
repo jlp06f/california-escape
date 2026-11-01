@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T10:58:17.894Z",
+  "updatedAt": "2026-11-01T11:14:58.835Z",
   "sheets": {
     "Itinerary": [
       {
@@ -78,7 +78,7 @@
         "Website URL": "https://www.casamaniresortnapavalley.com/",
         "Estimated Cost ($)": "",
         "Status": "Booked",
-        "Photo URL": "https://casamaniresortnapavalley-cdn.zambezimarketing.io/assets/files/15385/casamani_pool3-0054_r2f_r10f_1.2000x0.jpg",
+        "Photo URL": "https://z.cdrst.com/foto/hotel-sf/8e7c/granderesp/casa-mani-resort-napa-valley-curio-collection-by-hilton-exterior-16292691.jpg",
         "Reservation Link": "",
         "Notes": ""
       },
@@ -94,7 +94,7 @@
         "Website URL": "https://www.scalaosteria.com/",
         "Estimated Cost ($)": "$300.00",
         "Status": "Booked",
-        "Photo URL": "https://images.squarespace-cdn.com/content/v1/62e9aeb9683ef346dd970046/4d743df9-7487-4f4e-bcfb-a6dc02145c52/scala-osteria-napa-exterior-patio-first-street.jpg",
+        "Photo URL": "https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,q_75,w_1200/v1/crm/napavalley/Scala-Osteria-exterior_BA95C78F-5056-A36A-088B4687B217C530-ba95c6525056a36_ba95cdef-5056-a36a-0869ba1804ab0fbc.jpg",
         "Reservation Link": "",
         "Notes": "Menu: https://www.scalaosteria.com/all-day-menu"
       },
@@ -118,7 +118,7 @@
         "ID": "NAPA-08",
         "Date": "Tue, Nov 3, 2026",
         "Destination": "Napa",
-        "Time": "2:00 PM",
+        "Time": "2:20 PM",
         "Category": "Travel",
         "Activity": "Leave Downtown Napa for Winery",
         "Address": "",
@@ -134,15 +134,15 @@
         "ID": "NAPA-09",
         "Date": "Tue, Nov 3, 2026",
         "Destination": "Napa",
-        "Time": "3:00 PM",
+        "Time": "3:15 PM",
         "Category": "Activity",
         "Activity": "Castello di Amorosa - Winery",
         "Address": "4045 St Helena Hwy, Calistoga, CA 94515",
         "Map URL": "https://maps.app.goo.gl/DJTuAvRnxdseczJs9",
         "Website URL": "https://castellodiamorosa.com/",
-        "Estimated Cost ($)": "$275.00",
-        "Status": "Planned",
-        "Photo URL": "",
+        "Estimated Cost ($)": "$253.16",
+        "Status": "Booked",
+        "Photo URL": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/ba/fa/db/castello-di-amorosa-took.jpg?w=1000&h=-1&s=1",
         "Reservation Link": "",
         "Notes": ""
       },
@@ -172,7 +172,7 @@
         "Address": "933 Main St #29, St Helena, CA 94574",
         "Map URL": "https://maps.app.goo.gl/X2YLP1LL9Dd3S8Uk9",
         "Website URL": "https://www.gotts.com/location/city-of-st-helena/",
-        "Estimated Cost ($)": "$150.00",
+        "Estimated Cost ($)": "$120.00",
         "Status": "",
         "Photo URL": "",
         "Reservation Link": "",
@@ -754,12 +754,12 @@
       },
       {
         "Category": "Dining",
-        "Estimated ($)": "650",
+        "Estimated ($)": "620",
         "Notes": ""
       },
       {
         "Category": "Activities",
-        "Estimated ($)": "385",
+        "Estimated ($)": "363.16",
         "Notes": ""
       },
       {
