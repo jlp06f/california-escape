@@ -1029,8 +1029,123 @@ function show(tab) { active = tab; document.querySelectorAll('.view').forEach(e 
 function openDay(i) { dayIndex = i; renderDays(); show('itinerary'); }
 // Render desktop and mobile navigation.
 function nav() { const html = arr => arr.map(([id, ico, label]) => `<button data-tab="${id}" onclick="show('${id}')" class="${active === id ? 'active' : ''}"><span class="symbol">${ico}</span>${label}</button>`).join(''); document.getElementById('topNav').innerHTML = html(TABS); document.getElementById('bottomNav').innerHTML = html([TABS[0], TABS[1], TABS[3], TABS[2], TABS[4]]); }
-// Build the daily timeline from itinerary.json.
-function renderDays() { document.getElementById('daybar').innerHTML = DAYS.map((d, i) => `<button class="${i === dayIndex ? 'active' : ''}" onclick="openDay(${i})"><small>${d.label.split(' ')[0]}</small>${d.label.split(' ')[1]} Nov</button>`).join(''); let d = DAYS[dayIndex], rows = dateRows(dayIndex); document.getElementById('daytitle').textContent = d.city + ' · November ' + (dayIndex + 2); document.getElementById('timeline').innerHTML = rows.length ? rows.map(r => { let address = field(r, 'Address'), maps = safeUrl(field(r, 'Map URL')) || (address ? 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(address) : ''); return `<article class="event card"><div class="eventtop"><span class="eyebrow">${esc(field(r, 'Time') || 'Time TBD')} · ${esc(field(r, 'Category') || 'Activity')}</span><span class="pill">${esc(field(r, 'Status') || 'Planned')}</span></div><h3>${esc(field(r, 'Activity', 'Name') || 'Untitled activity')}</h3>${address ? `<p>⌖ ${esc(address)}</p>` : ''}${field(r, 'Notes') ? `<p>${esc(field(r, 'Notes'))}</p>` : ''}${field(r, 'Estimated Cost ($)') ? `<p>Estimated cost: ${cash(field(r, 'Estimated Cost ($)'))}</p>` : ''}<div class="actions">${link(maps, 'Directions')}${link(field(r, 'Website URL'), 'Website')}${link(field(r, 'Reservation Link'), 'Reservation')}</div></article>`; }).join('') : '<div class="empty">Nothing scheduled yet. Add an activity for this date in your Google Sheet, then tap Refresh.</div>'; }
+
+/**
+ * Render the selected day's itinerary.
+ *
+ * Activity photos are optional:
+ * - Valid Photo URL: display the image.
+ * - Empty Photo URL: render a text-only card.
+ * - Broken image: hide the image without affecting the card.
+ */
+function renderDays() {
+    const daybar = document.getElementById('daybar');
+    const timeline = document.getElementById('timeline');
+    const daytitle = document.getElementById('daytitle');
+
+    // Build the day-selection buttons.
+    daybar.innerHTML = DAYS.map((day, index) => `
+        <button
+            class="${index === dayIndex ? 'active' : ''}"
+            onclick="openDay(${index})"
+        >
+            <small>${day.label.split(' ')[0]}</small>
+            ${day.label.split(' ')[1]} Nov
+        </button>
+    `).join('');
+
+    const selectedDay = DAYS[dayIndex];
+    const activities = dateRows(dayIndex);
+
+    daytitle.textContent =
+        selectedDay.city + ' · November ' + (dayIndex + 2);
+
+    if (activities.length === 0) {
+        timeline.innerHTML = `
+            <div class="empty">
+                Nothing scheduled yet. Add an activity in
+                Google Sheets, then tap Refresh.
+            </div>
+        `;
+        return;
+    }
+
+    // Build each activity card.
+    timeline.innerHTML = activities.map(activity => {
+        const name = field(
+            activity, 'Activity', 'Name'
+        ) || 'Untitled activity';
+
+        const address = field(activity, 'Address');
+
+        const maps = safeUrl(field(activity, 'Map URL')) ||
+            (address
+                ? 'https://www.google.com/maps/search/?api=1&query=' +
+                  encodeURIComponent(address)
+                : '');
+
+        // Read the optional photo URL from Google Sheets.
+        const photoUrl = safeUrl(field(activity, 'Photo URL'));
+
+        const photoHtml = photoUrl ? `
+            <img
+                src="${esc(photoUrl)}"
+                alt="${esc(name)}"
+                loading="lazy"
+                style="
+                    display: block;
+                    width: 100%;
+                    max-height: 280px;
+                    object-fit: cover;
+                    border-radius: 12px;
+                    margin: 12px 0;
+                "
+                onerror="this.hidden=true;this.style.display='none'"
+            >
+        ` : '';
+
+        return `
+            <article class="event card">
+                <div class="eventtop">
+                    <span class="eyebrow">
+                        ${esc(field(activity, 'Time') || 'Time TBD')}
+                        ·
+                        ${esc(field(activity, 'Category') || 'Activity')}
+                    </span>
+
+                    <span class="pill">
+                        ${esc(field(activity, 'Status') || 'Planned')}
+                    </span>
+                </div>
+
+                <h3>${esc(name)}</h3>
+
+                ${photoHtml}
+
+                ${address
+                    ? `<p>⌖ ${esc(address)}</p>`
+                    : ''}
+
+                ${field(activity, 'Notes')
+                    ? `<p>${esc(field(activity, 'Notes'))}</p>`
+                    : ''}
+
+                ${field(activity, 'Estimated Cost ($)')
+                    ? `<p>Estimated cost:
+                        ${cash(field(activity, 'Estimated Cost ($)'))}
+                       </p>`
+                    : ''}
+
+                <div class="actions">
+                    ${link(maps, 'Directions')}
+                    ${link(field(activity, 'Website URL'), 'Website')}
+                    ${link(field(activity, 'Reservation Link'), 'Reservation')}
+                </div>
+            </article>
+        `;
+    }).join('');
+}
+
 // Show the next upcoming activity on the homepage.
 function renderHome() { let today = '2026-10-18'; try {
     today = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Phoenix', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
